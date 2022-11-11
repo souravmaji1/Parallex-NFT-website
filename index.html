@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <style>
+           @import url('https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&family=Teko:wght@500&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap');
+       @import url('https://font.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+       
+       *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+       }
+       body{
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: #1c0522;
+       }
+       header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10000;
+       }
+       header .logo{
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+       }
+       header ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 250px;
+       }
+       header ul li{
+        list-style: none;
+        margin-left: 20px;
+       }
+       header ul li a{
+        font-family: 'Russo One', sans-serif;
+        text-decoration: none;
+        padding: 6px 15px;
+        color: #fff;
+        border-radius: 20px;
+       }
+       header ul li a:hover, 
+       header ul li a.active{
+        background: #fff;
+        color: #2b1055;
+       }
+       section{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 100px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       section::before{
+         content: '';
+         position: absolute;
+         bottom: 0;
+         width: 100%;
+         height: 100px;
+         background: linear-gradient(to top,#1c0522,transparent);
+         z-index: 1000;
+       }
+       section img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+       }
+       section img#moon{
+        mix-blend-mode: screen;
+
+
+       }
+       section img#mountains_front{
+        z-index: 10;
+
+       }
+       #text{
+        font-family: 'Russo One', sans-serif;
+        position: absolute;
+        right: -350px;
+        color: #fff;
+        white-space: nowrap;
+        font-size: 7.5vw;
+        z-index: 9;
+        
+       }
+       #btn{
+        font-family: 'Russo One', sans-serif;
+        text-decoration: none;
+        padding: 8px 30px;
+        border-radius: 40px;
+        background: #fff;
+        color: #2b1055;
+        font-size: 1.5em;
+        display: inline-block;
+        z-index: 9;
+        transform: translateY(100px);
+       }
+       .sec{
+        position: relative;
+        padding: 100px;
+        background: #1c0522;
+       }
+       .sec h2{
+        font-family: 'Russo One', sans-serif;
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        color: skyblue;
+
+       }
+       .sec p{
+        font-family: 'Lobster', cursive;
+        font-size: 1.5em;
+        color: #fff;
+       }
+
+
+       h1 {
+        font-family: 'Russo One', sans-serif;
+        background: #1c0522;
+	 text-align: center;
+	color: skyblue;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+       .timeline {
+        background: #1c0522;
+	 position: relative;
+	 padding: 1rem;
+	 margin: 0 auto;
+	 max-width: 1300px;
+}
+ .timeline:before {
+	 content: '';
+	 position: absolute;
+	 height: 100%;
+	 border: 1px solid skyblue;
+	 right: 40px;
+	 top: 0;
+}
+ .timeline:after {
+	 content: "";
+	 display: table;
+	 clear: both;
+}
+ @media screen and (min-width: 700px) {
+	 .timeline {
+		 padding: 2rem;
+	}
+	 .timeline:before {
+		 left: calc(50% - 1px);
+		 right: auto;
+	}
+}
+ .timeline__item {
+    font-family: 'Lobster', cursive;
+	 padding: 1rem;
+	 border: 2px solid skyblue;
+	 border-image: linear-gradient(to right, skyblue 100%);
+	 border-image-slice: 1;
+	 position: relative;
+     background: darkcyan;
+	 margin: 1rem 3rem 1rem 1rem;
+	 clear: both;
+}
+ .timeline__item:after, .timeline__item:before {
+	 content: '';
+	 position: absolute;
+}
+ .timeline__item:before {
+	 right: -10px;
+	 top: calc(50% - 5px);
+	 border-style: solid;
+	 border-color: skyblue skyblue transparent transparent;
+	 border-width: 10px;
+	 transform: rotate(45deg);
+}
+ @media screen and (min-width: 700px) {
+	 .timeline__item {
+		 width: 44%;
+		 margin: 1rem;
+	}
+	 .timeline__item:nth-of-type(2n) {
+		 float: right;
+		 margin: 1rem;
+		 border-image: linear-gradient(to right, skyblue 100%);
+		 border-image-slice: 1;
+	}
+	 .timeline__item:nth-of-type(2n):before {
+		 right: auto;
+		 left: -10px;
+		 border-color: transparent transparent skyblue skyblue;
+	}
+}
+ .timeline__item--year {
+    font-family: 'Lobster', cursive;
+	 text-align: center;
+	 max-width: 150px;
+	 margin: 0 48px 0 auto;
+	 font-size: 1.8rem;
+	 background-color: darkcyan;
+	 line-height: 1;
+	 border-image: none;
+	 padding: 0.5rem 1rem 1rem;
+}
+ .timeline__item--year:before {
+	 display: none;
+}
+ @media screen and (min-width: 700px) {
+	 .timeline__item--year {
+		 text-align: center;
+		 margin: 0 auto;
+	}
+	 .timeline__item--year:nth-of-type(2n) {
+		 float: none;
+		 margin: 0 auto;
+		 border-image: none;
+	}
+	 .timeline__item--year:nth-of-type(2n):before {
+		 display: none;
+	}
+}
+ .timeline__title {
+	 margin: 0;
+	 font-family: 'Lobster', cursive;
+	 font-size: 1.5em;
+}
+ .timeline__blurb {
+	 line-height: 1.5;
+	 font-size: 1rem;
+	 margin: 0.5rem 0 0;
+}
+ 
+
+
+
+
+
+
+.slider {
+    margin-bottom: 100px;
+	 
+	 width: 100%;
+	 top: calc(50% - 97.25px);
+	 overflow: hidden;
+}
+ .slider .slider-row {
+	 width: 2956px;
+	 height: 194.5px;
+	 background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/111863/ubiquity-summit-web-01.png);
+	 background-size: 2956px 194.5px;
+	 animation: slide 50s linear infinite;
+}
+ @keyframes slide {
+	 from {
+		 background-position-x: 0;
+	}
+	 to {
+		 background-position-x: -2956px;
+	}
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+                <li>
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Mint</a>
+                    <a href="#home">Mint</a>
+                </li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">NFTs are Future</h2>
+            <a href="sec" id="btn">MINT</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>
+                ABOUT US
+            </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora corrupti sequi animi commodi ab explicabo sapiente, consequuntur accusamus nobis qui similique incidunt molestias tenetur autem suscipit porro. Id, explicabo doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, ex. Illo sequi voluptatem quod tempore maxime quas? A odio numquam nihil, illum nisi deserunt cumque cum recusandae, aut nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cumque a temporibus aliquam, autem blanditiis tempore cum atque soluta rerum excepturi aspernatur suscipit odit illo odio, deserunt accusamus unde <br></br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, quo aliquam repellat ipsam laudantium cumque perferendis ipsum modi nemo sint ut, veniam maxime aut illo vero voluptatum delectus cupiditate. Vel?Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatibus itaque excepturi iure vero quia beatae fugit architecto accusamus, a pariatur molestiae molestias placeat velit odio laudantium autem libero aperiam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia nihil dolorem, vitae excepturi provident pariatur impedit corporis incidunt ut dolorum consequatur laudantium fuga doloribus perferendis nisi eligendi adipisci architecto?<br></br>adipisicing elit. Tempora corrupti sequi animi commodi ab explicabo sapiente, consequuntur accusamus nobis qui similique incidunt molestias tenetur autem suscipit porro. Id, explicabo doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, ex. Illo sequi voluptatem quod tempore maxime quas? A odio numquam nihil, illum nisi deserunt cumque cum recusandae, aut nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cumque a temporibus aliquam, autem blanditiis tempore cum atque soluta rerum excepturi aspernatur suscipit odit illo odio, deserunt accusamus unde <br></br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, quo aliquam repellat ipsam laudantium cumque perferendis ipsum modi nemo sint ut, veniam maxime aut illo vero voluptatum delectus cupiditate. Vel?Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatibus itaque excepturi iure vero quia beatae fugit architecto accusamus, a pariatur molestiae molestias placeat velit odio laudantium autem libero aperiam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia nihil dolorem, vitae excepturi provident pariatur impedit corporis incidunt ut dolorum consequatur laudantium fuga doloribus perferendis nisi eligendi adipisci architecto?<br></br>adipisicing elit. Tempora corrupti sequi animi commodi ab explicabo sapiente, consequuntur accusamus nobis qui similique incidunt molestias tenetur autem suscipit porro. Id, explicabo doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, ex. Illo sequi voluptatem quod tempore maxime quas? A odio numquam nihil, illum nisi deserunt cumque cum recusandae, aut nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cumque a temporibus aliquam, autem blanditiis tempore cum atque soluta rerum excepturi aspernatur suscipit odit illo odio, deserunt accusamus unde <br></br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, quo aliquam repellat ipsam laudantium cumque perferendis ipsum modi nemo sint ut, veniam maxime aut illo vero voluptatum delectus cupiditate. Vel?Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatibus itaque excepturi iure vero quia beatae fugit architecto accusamus, a pariatur molestiae molestias placeat velit odio laudantium autem libero aperiam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia nihil dolorem, vitae excepturi provident pariatur impedit corporis incidunt ut dolorum consequatur laudantium fuga doloribus perferendis nisi eligendi adipisci architecto? <br></br>adipisicing elit. Tempora corrupti sequi animi commodi ab explicabo sapiente, consequuntur accusamus nobis qui similique incidunt molestias tenetur autem suscipit porro. Id, explicabo doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, ex. Illo sequi voluptatem quod tempore maxime quas? A odio numquam nihil, illum nisi deserunt cumque cum recusandae, aut nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cumque a temporibus aliquam, autem blanditiis tempore cum atque soluta rerum excepturi aspernatur suscipit odit illo odio, deserunt accusamus unde <br></br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, quo aliquam repellat ipsam laudantium cumque perferendis ipsum modi nemo sint ut, veniam maxime aut illo vero voluptatum delectus cupiditate. Vel?Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatibus itaque excepturi iure vero quia beatae fugit architecto accusamus, a pariatur molestiae molestias placeat velit odio laudantium autem libero aperiam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia nihil dolorem, vitae excepturi provident pariatur impedit corporis incidunt ut dolorum consequatur laudantium fuga doloribus perferendis nisi eligendi adipisci architecto?</p>
+        </div>
+
+
+        
+
+
+
+
+
+        <h1>Roadmap</h1>
+<div class="timeline">
+  
+  <h2 class="timeline__item timeline__item--year">1985</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Born</h3>
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2003</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Graduated High School</h3>
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2004</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Started at Fox Valley Technical College (FVTC) in an Electrical Engineering program</h3>
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2006</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Changed at FVTC to Web Design & Development program</h3>
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2007</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Web Design Internship</h3>
+   
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2008</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">IT Internship</h3>
+   
+  </div>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Got Married</h3>
+  </div>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Application Engineer</h3>
+   
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2012</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">First Child</h3>
+    
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2015</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Second Child</h3>
+    
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2016</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Lead Application Engineer</h3>
+   
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2018</h2>
+  
+  <div class="timeline__item">
+    <h3 class="timeline__title">Aerial/Circus Arts</h3>
+   
+  </div>
+  
+  <h2 class="timeline__item timeline__item--year">2019</h2>
+  
+</div>
+
+
+
+
+
+<h1 style="margin-top: 100px;">OUR NFT GALLERY</h1>
+
+
+
+
+
+
+<div class="slider">
+    <div class="slider-row"></div>
+  </div>
+
+
+
+<div class="sim">
+<img src="coming.png"></img>
+</div>
+
+
+
+
+
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            });
+        </script>
+    </body>
+</html>
